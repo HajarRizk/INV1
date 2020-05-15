@@ -13,11 +13,14 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class output extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
+	private JLabel WordLabel;
 
 	/**
 	 * Launch the application.
@@ -46,7 +49,7 @@ public class output extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 709, 397);
+		scrollPane.setBounds(10, 36, 709, 372);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -95,5 +98,10 @@ public class output extends JFrame {
 		table.getColumnModel().getColumn(0).setPreferredWidth(61);
 		table.getColumnModel().getColumn(1).setPreferredWidth(120);
 		scrollPane.setViewportView(table);
+		String st=r.l.get(0);
+		WordLabel = new JLabel(st);
+		WordLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
+		WordLabel.setBounds(10, 11, 98, 14);
+		contentPane.add(WordLabel);
 	}
 }
