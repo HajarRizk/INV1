@@ -8,7 +8,7 @@ public class fn {
 private File f;
 private binarysearchtree b=new binarysearchtree();
 public Vector<LinkedList<String>> invertedIndex=new Vector<LinkedList<String>>(200004);
-
+public  Node root =null;
 public void setFolder (File folder) {
 	
 	f=folder;
@@ -19,7 +19,7 @@ public void go()
 	
 	String[] fileList = f.list();  //List of names of file in the Folder
 
-   for(int i=0;i<2;i++)  //Loop on the files in the folder //fileList.length
+   for(int i=0;i<fileList.length;i++)  //Loop on the files in the folder //fileList.length
 	{
 
 	String str=new String();
@@ -83,29 +83,37 @@ public void go()
 	
 	        
 	}
-
-	
-			
-
-
-	for(int i=0;i<invertedIndex.size();i++)
-	{
-		System.out.println(invertedIndex.get(i));
-	}
-
-    Node root =null;
-	for(int i=0;i<invertedIndex.size();i++)
+   
+    root =	b.insert(root,invertedIndex.get(0).getFirst() ,invertedIndex.get(0));
+	for(int i=1;i<invertedIndex.size();i++)
 	{	
+		b.insert(root,invertedIndex.get(i).getFirst() ,invertedIndex.get(i));
 		
-		root=b.insert(root,invertedIndex.get(i).getFirst() ,invertedIndex.get(i));
-		
-	
 	}
-	
+  System.out.println("DONE");	
 
 	
 		
 }
+
+public LinkedList<String> search(Node node,String val){
+
+	while(node!=null) {
+		if(node.word.compareToIgnoreCase(val)<0) {
+			node=node.right;
+		}
+		else if(node.word.compareToIgnoreCase(val)>0) {
+			node=node.left;
+		}
+		else {
+			break;
+		}
+		
+			
+		}
+	return node.ids;
+	}
+
 
 
 

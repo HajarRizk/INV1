@@ -28,24 +28,5 @@ class binarysearchtree {
 		
 	}
 
-	public LinkedList<String> search(Node node,String val){
-
-		while(node!=null) {
-			if(node.word.compareToIgnoreCase(val)<0) {
-				node=node.right;
-			}
-			else if(node.word.compareToIgnoreCase(val)>0) {
-				node=node.left;
-			}
-			else {
-				break;
-			}
-			
-				
-			}
-		return node.ids;
-		}
-
-
 
 }
