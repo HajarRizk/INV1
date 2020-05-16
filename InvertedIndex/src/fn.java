@@ -1,8 +1,12 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Timer; 
+import java.util.TimerTask; 
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Vector;
+
+import javax.swing.JOptionPane;
 
 public class fn {
 private File f;
@@ -16,11 +20,13 @@ System.out.println(f);
 }
 public void go()
 {
-	
+    
 	String[] fileList = f.list();  //List of names of file in the Folder
 
    for(int i=0;i<fileList.length;i++)  //Loop on the files in the folder //fileList.length
 	{
+	   
+   
 
 	String str=new String();
 	str=fileList[i] ; //Name of the file
@@ -83,13 +89,14 @@ public void go()
 	
 	        
 	}
-   
+ 
     root =	b.insert(root,invertedIndex.get(0).getFirst() ,invertedIndex.get(0));
 	for(int i=1;i<invertedIndex.size();i++)
 	{	
 		b.insert(root,invertedIndex.get(i).getFirst() ,invertedIndex.get(i));
 		
 	}
+	 JOptionPane.showMessageDialog(null,"program is Ready Enter your Word "  );
   System.out.println("DONE");	
 
 	
