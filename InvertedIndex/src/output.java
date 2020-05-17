@@ -43,13 +43,13 @@ public class output extends JFrame {
 	 */
 	public output() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 745, 458);
+		setBounds(100, 100, 745, 531);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 36, 709, 372);
+		scrollPane.setBounds(10, 53, 709, 431);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -101,7 +101,7 @@ public class output extends JFrame {
 		String st=r.l.get(0);
 		WordLabel = new JLabel(st);
 		WordLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		WordLabel.setBounds(10, 11, 98, 14);
+		WordLabel.setBounds(10, 11, 185, 32);
 		contentPane.add(WordLabel);
 	}
 }

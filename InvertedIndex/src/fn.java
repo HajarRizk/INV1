@@ -11,13 +11,15 @@ import javax.swing.JOptionPane;
 public class fn {
 private File f;
 private binarysearchtree b=new binarysearchtree();
-public Vector<LinkedList<String>> invertedIndex=new Vector<LinkedList<String>>(200004);
+public Vector<LinkedList<String>> invertedIndex=new Vector<LinkedList<String>>(42000);
 public  Node root =null;
 public void setFolder (File folder) {
 	
 	f=folder;
-System.out.println(f);	
+	
 }
+
+
 public void go()
 {
     
@@ -30,7 +32,6 @@ public void go()
 
 	String str=new String();
 	str=fileList[i] ; //Name of the file
-//	System.out.println(str);
 	try {
 	      File myFile = new File(f +"\\"+ str); //Path of the file
 	      Scanner myReader = new Scanner(myFile);
@@ -96,8 +97,9 @@ public void go()
 		b.insert(root,invertedIndex.get(i).getFirst() ,invertedIndex.get(i));
 		
 	}
-	 JOptionPane.showMessageDialog(null,"program is Ready Enter your Word "  );
-  System.out.println("DONE");	
+	 JOptionPane.showMessageDialog(null,"Program is Ready Enter your Word "  );
+	// System.out.println(invertedIndex.size());	
+  //System.out.println("DONE");	
 
 	
 		

@@ -81,12 +81,14 @@ public static  LinkedList<String> l=new  LinkedList<String>();
 				String st=wooo.getText();
 				try {
 		         l=	f.search(f.root, st);
+		        output o =new output();
+					o.setVisible(true);
 				}
 				catch (Exception e1) {
 					JOptionPane.showMessageDialog(null,"Word Not Found");
 				}
-				output o =new output();
-				o.setVisible(true);
+				 
+				
 			}
 		});
 		btnEnterWord.setBounds(75, 144, 128, 36);
